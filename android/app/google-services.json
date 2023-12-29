@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "373495449327",
+    "project_id": "recyclo-d9f1b",
+    "storage_bucket": "recyclo-d9f1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373495449327:android:8bbce59a29047fb884bd1a",
+        "android_client_info": {
+          "package_name": "com.example.recyclo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi41_eNhw_uaqnMAkM8bpQGIPfzU3_B10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373495449327:android:9fa680cbf68fbc1384bd1a",
+        "android_client_info": {
+          "package_name": "com.example.wastehub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi41_eNhw_uaqnMAkM8bpQGIPfzU3_B10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
