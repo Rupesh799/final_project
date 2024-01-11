@@ -36,6 +36,7 @@ class _LoginState extends State<Login> {
   List<String> roles = ["Seller", "Buyer"];
 
   userLogin() async {
+    // ignore: duplicate_ignore
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
@@ -51,17 +52,16 @@ class _LoginState extends State<Login> {
       // Check if the user's role matches the selected role
       // ignore: unrelated_type_equality_checks
       if (selectedRole == "Seller" && userType == 'Seller') {
-        Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const Home()));
-              }
-        // Navigate to the appropriate screen based on the user's role
-        
-        else if(selectedRole == "Buyer" && userType == 'Buyer'){
-          // Navigate to Buyer screen
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const BuyerHome()));
-        }
-       else {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => const Home()));
+      }
+      // Navigate to the appropriate screen based on the user's role
+
+      else if (selectedRole == "Buyer" && userType == 'Buyer') {
+        // Navigate to Buyer screen
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const BuyerHome()));
+      } else {
         // Role mismatch, show an error message or handle it accordingly
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -69,6 +69,8 @@ class _LoginState extends State<Login> {
               backgroundColor: Color.fromARGB(255, 8, 149, 128)),
         );
       }
+
+      
 
       // if (selectedRole == "Seller") {
       //   Navigator.push(
@@ -79,12 +81,12 @@ class _LoginState extends State<Login> {
       // }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("No user found for that email"),
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text("No user found for that email"),
             backgroundColor: Color.fromARGB(255, 8, 149, 128)));
       } else if (e.code == 'wrong-password') {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Wrong Password"),
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text("Wrong Password"),
             backgroundColor: Color.fromARGB(255, 8, 149, 128)));
       }
     }
